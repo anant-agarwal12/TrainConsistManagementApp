@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class TrainConsistMgmt{
+public class TrainConsistManagementApp{
   public static void main(String[] args){
 
     System.out.println("==================");
