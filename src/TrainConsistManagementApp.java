@@ -15,11 +15,11 @@ class Bogie {
   }
 }
 
-public class TrainConsistManagementApp {
+public class TrainConsistMgmt {
   public static void main(String[] args) {
 
     System.out.println("================================");
-    System.out.println("UC9 Group Bogies by Type");
+    System.out.println("UC10 Count Total Seats in Train");
     System.out.println("================================\n");
 
     List<Bogie> bogies = new ArrayList<>();
@@ -33,6 +33,19 @@ public class TrainConsistManagementApp {
     System.out.println("All Bogies:");
     bogies.forEach(b -> b.display());
 
+
+    List<Integer> capacities = bogies.stream()
+            .map(b -> b.capacity)
+            .collect(Collectors.toList());
+
+
+    int totalCapacity = bogies.stream()
+            .map(b -> b.capacity)
+            .reduce(0, Integer::sum);
+
+    System.out.println("\nTotal Seating Capacity: " + totalCapacity);
+
+
     Map<String, List<Bogie>> groupedBogies = bogies.stream()
             .collect(Collectors.groupingBy(b -> b.name));
 
@@ -45,7 +58,6 @@ public class TrainConsistManagementApp {
         System.out.println("Capacity -> " + b.capacity);
       }
     }
-
-    System.out.println("\nUC9 grouping completed...");
+    System.out.println("\nUC10 aggregation completed...");
   }
 }
