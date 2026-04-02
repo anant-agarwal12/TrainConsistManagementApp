@@ -1,6 +1,6 @@
 import java.util.LinkedHashSet;
 
-public class TrainConsistMgmt {
+public class TrainConsistManagementApp {
   public static void main(String[] args) {
 
     System.out.println("================================ \nUC5 Preserve Insertion Order of Bogies \n================================\n \n");
